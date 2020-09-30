@@ -20,6 +20,16 @@ export default function App() {
 
 
 	React.useEffect(() => {
+		if (Platform.OS === 'android') {
+			Notifications.setNotificationChannelAsync('default', {
+				name: 'default',
+				importance: Notifications.AndroidImportance.MAX,
+				vibrationPattern: [0, 250, 250, 250],
+				enableVibrate: true,
+				enableLights: true,
+			})
+		}
+
 		Notifications.setNotificationHandler({
 			//  The function should respond with a behavior object within 3 seconds, otherwise the notification will be discarded.
 			// https://docs.expo.io/versions/latest/sdk/notifications/#setnotificationhandlerhandler-notificationhandler--null-void
