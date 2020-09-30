@@ -16,8 +16,17 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "notification": {
+      "icon": "assets/notification-icon-white-dev.png",
+      "color": "#ff0000"
+    },
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "useNextNotificationsApi": true,
+      "package": "com.expo.notifications.inconsistency",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
